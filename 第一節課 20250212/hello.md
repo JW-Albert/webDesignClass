@@ -1,6 +1,5 @@
 # hello,world D1210799-H00
 
-'''html
 <!DOCTYPE html>
     <html lang="zh-tw">
     <head>
@@ -26,5 +25,3 @@
         <p>hello,world</p>
     </body>
 </html>
-'''
-
