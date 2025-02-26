@@ -1,11 +1,175 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-TW">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <title>線上註冊表單</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                max-width: 500px;
+                margin: 20px auto;
+            }
+            label {
+                font-weight: bold;
+                display: block;
+                margin-top: 10px;
+            }
+            input, select, textarea {
+                width: 100%;
+                padding: 8px;
+                margin-top: 5px;
+            }
+            input[type="radio"], input[type="checkbox"], input[type="range"] {
+                width: auto;
+            }
+            .checkbox-group, .radio-group {
+                display: flex;
+                gap: 10px;
+            }
+            button {
+                margin-top: 15px;
+                padding: 10px;
+                background-color: #007BFF;
+                color: white;
+                border: none;
+                cursor: pointer;
+                width: 100%;
+            }
+            button:hover {
+                background-color: #0056b3;
+            }
+        </style>
     </head>
     <body>
-        
+
+        <h2>線上註冊表單</h2>
+
+        <form id="registerForm">
+
+            <!-- 姓名 -->
+            <label for="name">姓名：</label>
+            <input type="text" id="name" name="name" required maxlength="50">
+
+            <!-- 電子郵件 -->
+            <label for="email">電子郵件：</label>
+            <input type="email" id="email" name="email" required>
+
+            <!-- 密碼 -->
+            <label for="password">密碼：</label>
+            <input type="password" id="password" name="password" required minlength="8" 
+                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+                title="密碼至少8碼，且包含大小寫字母和數字">
+
+            <!-- 性別 -->
+            <label>性別：</label>
+            <div class="radio-group">
+                <input type="radio" id="male" name="gender" value="male" required>
+                <label for="male">男</label>
+
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">女</label>
+
+                <input type="radio" id="other" name="gender" value="other">
+                <label for="other">其他</label>
+            </div>
+
+            <!-- 生日 -->
+            <label for="birthday">生日：</label>
+            <input type="date" id="birthday" name="birthday" required max="9999-12-31">
+
+            <!-- 電話號碼 -->
+            <label for="phone">電話號碼：</label>
+            <input type="tel" id="phone" name="phone" required pattern="\d{10}" title="請輸入 10 位數字的電話號碼">
+
+            <!-- 國家 -->
+            <label for="country">國家：</label>
+            <select id="country" name="country" required>
+                <option value="">請選擇</option>
+                <option value="Taiwan">台灣</option>
+                <option value="USA">美國</option>
+                <option value="Japan">日本</option>
+                <option value="Other">其他</option>
+            </select>
+
+            <!-- 興趣 -->
+            <label>興趣：</label>
+            <div class="checkbox-group">
+                <input type="checkbox" id="reading" name="hobbies" value="reading">
+                <label for="reading">閱讀</label>
+                <input type="checkbox" id="sports" name="hobbies" value="sports">
+                <label for="sports">運動</label>
+                <input type="checkbox" id="travel" name="hobbies" value="travel">
+                <label for="travel">旅行</label>
+                <input type="checkbox" id="music" name="hobbies" value="music">
+                <label for="music">音樂</label>
+                <input type="checkbox" id="movie" name="hobbies" value="movie">
+                <label for="movie">電影</label>
+            </div>
+
+            <!-- 個人網站 -->
+            <label for="website">個人網站：</label>
+            <input type="url" id="website" name="website">
+
+            <!-- 喜愛的瀏覽器 -->
+            <label for="browser">喜愛的瀏覽器：</label>
+            <input list="browsers" id="browser" name="browser">
+            <datalist id="browsers">
+                <option value="Chrome">
+                <option value="Firefox">
+                <option value="Safari">
+                <option value="Edge">
+                <option value="其他">
+            </datalist>
+
+            <!-- 個人簡介 -->
+            <label for="bio">個人簡介：</label>
+            <textarea id="bio" name="bio" maxlength="200"></textarea>
+
+            <!-- 設定通知 -->
+            <label for="notification">設定通知頻率：</label>
+            <input type="range" id="notification" name="notification" min="0" max="100">
+
+            <!-- 上傳個人大頭照 -->
+            <label for="profilePic">上傳個人大頭照：</label>
+            <input type="file" id="profilePic" name="profilePic" accept="image/*">
+
+            <!-- 同意條款 -->
+            <div class="checkbox-group">
+                <input type="checkbox" id="terms" name="terms" required>
+                <label for="terms">我同意條款與規則</label>
+            </div>
+
+            <!-- 提交按鈕 -->
+            <button type="submit">提交</button>
+
+        </form>
+
+        <script>
+            document.getElementById("registerForm").addEventListener("submit", function(event) {
+                let birthday = document.getElementById("birthday").value;
+                let today = new Date().toISOString().split("T")[0];
+                
+                if (birthday >= today) {
+                    alert("生日必須是過去的日期！");
+                    event.preventDefault();
+                }
+
+                let password = document.getElementById("password").value;
+                let passwordPattern = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/;
+
+                if (!passwordPattern.test(password)) {
+                    alert("密碼必須至少 8 碼，包含大小寫字母和數字！");
+                    event.preventDefault();
+                }
+
+                let phone = document.getElementById("phone").value;
+                if (!/^\d{10}$/.test(phone)) {
+                    alert("電話號碼必須是 10 碼數字！");
+                    event.preventDefault();
+                }
+            });
+        </script>
+
     </body>
 </html>
