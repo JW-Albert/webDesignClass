@@ -22,13 +22,13 @@
             document.getElementById("avg_age").innerHTML = avg_str;
 
             console.log(avg_str);
-            console.log(avg_age.slice(2, 5));
-            console.log(avg_age.substr(2, 5));
-            console.log(avg_age.slice(-5));
-            console.log(avg_age.toUpperCase());
+            console.log(avg_str.slice(2, 5));
+            console.log(avg_str.substr(2, 5));
+            console.log(avg_str.slice(-5));
+            console.log(avg_str.toUpperCase());
 
             console.log("=====Split and Show=====");
-            string = avg_age.split(" ");
+            string = avg_str.split(" ");
             for (s of string) {
                 console.log(s);
             }
@@ -42,8 +42,6 @@
 
         <button type="button" onclick="avg_age()">Click me to display.</button>
 
-        <p id = "damo"></p>
-
-        <p id = "hello"></p>
+        <p id="avg_age"></p>
     </body>
 </html>
