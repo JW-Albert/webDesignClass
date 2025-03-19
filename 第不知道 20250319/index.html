@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <script>
+        function avg_age() {
+            let st1 = { name: "John", age: 25 };
+            let st2 = { name: "Bob", age: 30 };
+            let st3 = { name: "Nick", age: 35 };
+
+            let students = [st1, st2, st3];
+            let a = 0;
+
+            for (st of students) {
+                a += st.age;
+                console.log(a);
+            }
+
+            a = a / students.length;
+            a = a.toFixed(2);
+            console.log("Average age: " + a);
+
+            avg_str = `Average age: ${a}`;
+            document.getElementById("avg_age").innerHTML = avg_str;
+
+            console.log(avg_str);
+            console.log(avg_age.slice(2, 5));
+            console.log(avg_age.substr(2, 5));
+            console.log(avg_age.slice(-5));
+            console.log(avg_age.toUpperCase());
+
+            console.log("=====Split and Show=====");
+            string = avg_age.split(" ");
+            for (s of string) {
+                console.log(s);
+            }
+        }
+    </script>
+    
+    <body>
+        <h2>My First JS</h2>
+
+        <h2>Student age</h2>
+
+        <button type="button" onclick="avg_age()">Click me to display.</button>
+
+        <p id = "damo"></p>
+
+        <p id = "hello"></p>
+    </body>
+</html>
