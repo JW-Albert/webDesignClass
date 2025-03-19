@@ -32,6 +32,21 @@
             for (s of string) {
                 console.log(s);
             }
+
+
+            let g = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+            console.log(`Original str is ${g}`); 
+            console.log(`After flatting is ${g.flat()}`);
+            g = g.flat();
+            console.log(`After flatting is $(g)`);
+            g = g.slice(2, 7);
+            console.log(`After slicing is $(g)`);
+            g = g.push(100) ;
+            console.log(`After pushing is $(g)`);
+            pop_value = g.pop();
+            console.log(`After pop is ${g}, the poped value is ${pop_value}`);
+            g = g.join("@");
+            console.log(`After join is ${g}`);
         }
     </script>
     
