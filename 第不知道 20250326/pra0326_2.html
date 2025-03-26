@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function circle(){
+            let myStr = document.getElementById("myStr").value;
+            let first = myStr.slice(0 , 1);
+            let last = myStr.slice(1);
+            let r  = last + first;
+            document.getElementById("myStr").value = r;
+        }
+    </script>
+
+    <style>
+        label , input{
+            display: block;
+        }
+        button{
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>String Circle</h1>
+
+    <form action="">
+        <input type="text" id="myStr" value="0123456789">
+        <button type="button" onclick="circle()">click to circle</button>
+    </form>
+    
+</body>
+</html>

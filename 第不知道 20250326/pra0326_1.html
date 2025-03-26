@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function multi(){
+            let n1 = document.getElementById("n1").value;
+            let n2 = document.getElementById("n2").value;
+
+            let resultP = document.getElementById("result");
+            let r = n1 * n2;
+            resultP.innerHTML = r;
+        }
+
+        function div(){
+            let n1 = document.getElementById("n1").value;
+            let n2 = document.getElementById("n2").value;
+            let r = 'Error';
+            if (n2 != 0)
+            {
+                r = (n1 / n2).toFixed(2);
+                console.log(r);
+            }
+            let resultP = document.getElementById("result");
+            resultP.innerHTML = r;
+        }
+    </script>
+
+    <style>
+        label , input{
+            display: block;
+        }
+        button{
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Calculator</h1>
+
+    <form action="">
+        <label for="n1">num1:</label>
+        <input type="number" id="n1">
+
+        <label for="n2">num2:</label>
+        <input type="number" id="n2">
+
+        <button type="button" onclick="multi()">MUL</button>
+        <button type="button" onclick="div()">DIV</button>
+    </form>
+
+    <h2>Result:</h2>
+    <p id="result"></p> 
+</body>
+</html>
