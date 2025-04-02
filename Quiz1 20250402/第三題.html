@@ -1,0 +1,100 @@
+<html>
+    <head>
+        <style>
+        div.gallery {
+            margin: 5px;
+            border: 1px solid #ccc;
+            float: left;
+            width: 180px;
+            height: 220px;
+        }
+
+        div.gallery:hover {
+            border: 1px solid #777;
+        }
+
+        div.gallery img {
+            width: 100%;
+            height: auto;
+        }
+
+        div.desc {
+            padding: 15px;
+            text-align: center;
+        }
+        </style>
+
+        <script>
+            function myFunction() {
+                let characters = ["孫悟空-少年期", "龜仙人", "孫悟飯", "桃白白", "孫悟空-前期", "孫悟空-中期"];
+                characters.forEach(characters => console.log(characters));
+                let img_urls = ["http://img.yes-news.com/201502/ffef4eda.jpg",
+                                "http://img.yes-news.com/201502/b9461ecb.jpg",
+                                "http://img.yes-news.com/201502/c0e2da6f.jpg",
+                                "http://img.yes-news.com/201502/03b96611.jpg",
+                                "http://img.yes-news.com/201502/e079dd22.jpg",
+                                "http://img.yes-news.com/201502/c6812f95.jpg",
+                            ];
+                img_urls.forEach(img_urls => console.log(img_urls));
+
+                let el;
+                var step;
+                for (step = 0; step < 6; step++) {
+                    el = document.getElementById("desc" + step);
+                    el.textContent = characters[step];
+                    el = document.getElementById("img" + step);
+                    el.src = img_urls[step];
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h1>人物</h1>
+        <button type="button" onclick="myFunction()">人物上場</button>
+        <table>
+            <td>
+                <div class="gallery">
+                    <img id="img0">
+                    <div id="desc0" class="desc"></div>
+                </div>
+            </td>
+
+            <td>
+                <div class="gallery">
+                    <img id="img1">
+                    <div id="desc1" class="desc"></div>
+                </div>
+            </td>
+
+            <td>
+                <div class="gallery">
+                    <img id="img2">
+                    <div id="desc2" class="desc"></div>
+                </div>
+            </td>
+        </table>
+        
+        <table>
+            <td>
+                <div class="gallery">
+                    <img id="img3">
+                    <div id="desc3" class="desc"></div>
+                </div>
+            </td>
+
+            <td>
+                <div class="gallery">
+                    <img id="img4">
+                    <div id="desc4" class="desc"></div>
+                </div>
+            </td>
+
+            <td>
+                <div class="gallery">
+                    <img id="img5">
+                    <div id="desc5" class="desc"></div>
+                </div>
+            </td>
+        </table>
+    </body>
+</html>
