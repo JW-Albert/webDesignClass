@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+
+        <script>
+            const movies = [
+                { rank: 1, name: "柏捷頓家族：名門韻事", type: "愛情、時代", country: "美國" },
+                { rank: 2, name: "紳士追殺令", type: "犯罪、喜劇", country: "英國" },
+                { rank: 3, name: "艾蜜莉在巴黎", type: "愛情、喜劇", country: "美國" },
+                { rank: 4, name: "馴鹿寶貝", type: "驚悚、犯罪", country: "英國" },
+                { rank: 5, name: "逝者不安息", type: "驚悚、犯罪", country: "英國" },
+                { rank: 6, name: "怪物", type: "驚悚、犯罪、實案", country: "美國" },
+                { rank: 7, name: "降世神通：最後的氣宗", type: "奇幻、冒險", country: "美國" },
+                { rank: 8, name: "可卡因教母格麗塞爾達", type: "犯罪、實案", country: "美國" },
+                { rank: 9, name: "三體", type: "科幻、驚悚、IP", country: "美國" },
+                { rank: 10, name: "模範愛侶", type: "犯罪、驚悚", country: "美國" }
+            ];
+
+            function searchMovie(movieName) {
+                console.log(movieName)
+                let el;
+                let no;
+                
+                for (no = 1; no <= 10; no++) {
+                    console.log(movies[no].name)
+                    if (movieName == movies[no-1].name) {
+                        el = document.getElementById("rank");
+                        el.textContent = movies[no-1].rank;
+
+                        el = document.getElementById("name");
+                        el.textContent = movies[no-1].name;
+
+                        el = document.getElementById("type");
+                        el.textContent = movies[no-1].type;
+
+                        el = document.getElementById("country");
+                        el.textContent = movies[no-1].country;
+                    }
+
+                }
+            }
+        </script>
+    </head>
+    <body>
+        
+        <label for="movieName">電影名稱：</label>
+        <input type="text" id="movieName" name="movieName">
+        <button type="button" onclick="searchMovie(document.getElementById('movieName').value)">搜尋</button>
+
+        <div class="result">
+            <div id="rank"></div>
+            <div id="name"></div>
+            <div id="type"></div>
+            <div id="country"></div>
+        </div>
+    </body>
+</html>
