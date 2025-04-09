@@ -1,0 +1,86 @@
+<html>
+    <head>
+        <style>
+            .flex {
+                /* 水平置中 */
+                justify-content: center;    
+                /* 垂直置中 */
+                align-items: center;       
+                display: flex;
+                height: 300px;
+                padding: 15px;
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+
+            div.gallery {
+                margin: 5px;
+                float: left;
+                width: 250px;
+                height: 320px;
+                border: 2px solid #3a2b2b;
+            }
+
+            div.gallery:hover {
+                border: 2px solid #777;
+            }
+
+            div.gallery img {
+                width: 100%;
+                height: 100%;
+            }
+
+            div.rank {
+                color: red;
+                text-align: center;
+                padding: 5px;
+                font-size: 30px;
+            }
+
+            div.desc {
+                padding: 15px;
+                text-align: center;
+                font-size: 20px;
+            }
+
+            div.type {
+                text-align: center;
+            }
+
+            div.made {
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <h2 style="text-align:center"><strong>2024 Netfilx 熱門影集</strong></h2>
+
+        <div class="flex">
+            <div class="gallery">
+                <img src="https://hips.hearstapps.com/hmg-prod/images/fotojet-18-1609746998.jpg?crop=0.482xw:0.965xh;0.510xw,0.0192xh&resize=1200:*">
+                <div class="rank">1</div>
+                <div class="desc">柏捷頓家族：名門韻事</div>
+                <div class="type">愛情、時代</div>
+                <div class="made">美國</div>
+            </div>
+
+            <div class="gallery">
+                <img src="https://upload.wikimedia.org/wikipedia/zh/5/56/The_Gentlemen_%282020_film%29.jpg">
+                <div class="rank">2</div>
+                <div class="desc">紳士追殺令</div>
+                <div class="type">犯罪、喜劇</div>
+                <div class="made">英國</div>
+            </div>
+
+
+
+            <div class="gallery">
+                <img src="https://upload.wikimedia.org/wikipedia/zh/e/e3/Emily_in_Paris_poster.jpg">
+                <div class="rank">3</div>
+                <div class="desc">艾蜜莉在巴黎</div>
+                <div class="type">愛情、喜劇</div>
+                <div class="made">美國</div>
+            </div>
+        </div>
+    </body>
+</html>
